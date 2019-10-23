@@ -6,4 +6,4 @@ The interested reader is refered to [HTJ2K white paper](https://kakadusoftware.c
 
 ## Javascript of OpenJPH
 
-OpenJPH can be compiled to Javascript now.  For a demo, see [this](openjph.org/javascript/demo.html).
+OpenJPH can be compiled to Javascript now.  For a demo, see [this](javascript/demo.html).
