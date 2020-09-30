@@ -193,7 +193,7 @@ Note: Below each image, we display the number of decoded bytes and PSNR.
           Module._free(buffer);  
 
           var t1 = performance.now();
-          document.getElementById(txt_ele_name).innerText = pre_text + (t1 - t0) + " ms";
+          document.getElementById(txt_ele_name).innerText = pre_text + (t1 - t0).toFixed(2) + " ms";
         }
 
         var request = new XMLHttpRequest;
