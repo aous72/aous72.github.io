@@ -6,7 +6,7 @@ The interested reader is referred to the [short HTJ2K white paper](http://ds.jpe
 
 ## Javascript of OpenJPH
 
-OpenJPH can be compiled to Javascript.  For a demo, see [this](https://openjph.org/javascript/demo.html).  This demo also shows decoding a single HTJ2K image at multiple resolutions, a feature known as resolution scalability.  The decoding process involves decoding a prefix of the file; i.e., decoding only the first x bytes of the file -- the number of bytes that need to be decoded is detailed in the demo.html page.
+OpenJPH can be compiled to Javascript.  For a demo, see [**this**](https://openjph.org/javascript/demo.html).  This demo also shows decoding a single HTJ2K image at multiple resolutions, a feature known as resolution scalability.  The decoding process involves decoding a prefix of the file; i.e., decoding only the first x bytes of the file -- the number of bytes that need to be decoded is detailed in the demo.html page.
 
 Another project of interest is the [openjphjs](https://github.com/chafey/openjphjs) project, developed by [Chris](https://github.com/chafey);  at [this URL](https://chafey.github.com/openjphjs/test/browser/index.html) you can find a nice online demonstration of javascript-based HTJ2K encoding/decoding, with a wealth of features and user-selectable options.
 
