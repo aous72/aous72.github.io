@@ -32,12 +32,12 @@ Note: Below each image, we display the number of decoded bytes
   </tr>                                                       
   <tr>
     <td style="text-align:center; width:64px"> <pre>Decoded<br/>Bytes</pre></td>
-    <td style="text-align:center; width:48px"> <pre>826<br/>bytes</pre></td>
-    <td style="text-align:center; width:48px"> <pre>2312<br/>bytes</pre></td>
-    <td style="text-align:center; width:64px"> <pre>5977<br/>bytes</pre></td>
-    <td style="text-align:center; width:128px"><pre>13022<br/>bytes</pre></td>
-    <td style="text-align:center; width:256px"><pre>22005<br/>bytes</pre></td>
-    <td style="text-align:center; width:512px"><pre>32553<br/>bytes</pre></td>
+    <td style="text-align:center; width:48px"> <pre>1152<br/>bytes</pre></td>
+    <td style="text-align:center; width:48px"> <pre>3074<br/>bytes</pre></td>
+    <td style="text-align:center; width:64px"> <pre>8173<br/>bytes</pre></td>
+    <td style="text-align:center; width:128px"><pre>19395<br/>bytes</pre></td>
+    <td style="text-align:center; width:256px"><pre>41160<br/>bytes</pre></td>
+    <td style="text-align:center; width:512px"><pre>77593<br/>bytes</pre></td>
   </tr>
 </table>
 
@@ -54,36 +54,24 @@ Note: Below each image, we display the number of decoded bytes
     <td><canvas id='r2c4' width="512px" height="512px"></canvas></td>
   </tr>
   <tr>
-    <td><pre style="text-align:center">Decoded Bytes: 826 bytes</pre></td>
-    <td><pre style="text-align:center">Decoded Bytes: 2312 bytes</pre></td>
-  </tr>
-  <tr>
-    <td><pre style="text-align:center">PSNR: 16.96 dB</pre></td>
-    <td><pre style="text-align:center">PSNR: 18.25 dB</pre></td>
+    <td><pre style="text-align:center">Decoded Bytes: 1152 bytes</pre></td>
+    <td><pre style="text-align:center">Decoded Bytes: 3074 bytes</pre></td>
   </tr>
   <tr>
     <td><canvas id='r2c3' width="512px" height="512px"></canvas></td>
     <td><canvas id='r2c2' width="512px" height="512px"></canvas></td>
   </tr>
   <tr>
-    <td><pre style="text-align:center">Decoded Bytes: 5977 bytes</pre></td>
-    <td><pre style="text-align:center">Decoded Bytes: 13022 bytes</pre></td>
-  </tr>
-  <tr>
-    <td><pre style="text-align:center">PSNR: 21.21 dB</pre></td>
-    <td><pre style="text-align:center">PSNR: 25.46 dB</pre></td>
+    <td><pre style="text-align:center">Decoded Bytes: 8173 bytes</pre></td>
+    <td><pre style="text-align:center">Decoded Bytes: 19395 bytes</pre></td>
   </tr>
   <tr>
     <td><canvas id='r2c1' width="512px" height="512px"></canvas></td>    
     <td><canvas id='r2c0' width="512px" height="512px"></canvas></td>    
   </tr>
   <tr>
-    <td><pre style="text-align:center">Decoded Bytes: 22005 bytes</pre></td>
-    <td><pre style="text-align:center">Decoded Bytes: 32553 bytes</pre></td>
-  </tr>
-  <tr>
-    <td><pre style="text-align:center">PSNR: 30.82 dB</pre></td>
-    <td><pre style="text-align:center">PSNR: 37.13 dB</pre></td>
+    <td><pre style="text-align:center">Decoded Bytes: 41160 bytes</pre></td>
+    <td><pre style="text-align:center">Decoded Bytes: 77593 bytes</pre></td>
   </tr>
 </table>
 <script>
@@ -180,7 +168,7 @@ Note: Below each image, we display the number of decoded bytes
         }
 
         var request = new XMLHttpRequest;
-        request.open("GET", "test.j2c" , true);
+        request.open("GET", "test2.j2c" , true);
         request.responseType = "arraybuffer";
         request.onload = function (event) {
             if (request.status == 200)
