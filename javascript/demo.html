@@ -11,7 +11,7 @@ Decoding the full resolution image.
 </pre>
 <canvas id="mycanvas" width="512" height="512"></canvas>
 <br>
-<pre id="time" style="font-size: 16px">Decode time: </pre>
+<pre style="font-size: 16px">Decode time: </pre>
 <pre id="time" style="font-size: 16px"></pre>
 
 <h1>HTJ2K progressive decoding to the actual image resolution</h1>
@@ -40,6 +40,15 @@ Note: Below each image, we display the number of decoded bytes
     <td style="text-align:center; width:256px"><pre>22005<br/>bytes</pre></td>
     <td style="text-align:center; width:512px"><pre>32553<br/>bytes</pre></td>
   </tr>
+  <tr>
+    <td style="text-align:center; width:64px"> <pre>Time</pre></td>
+    <td style="text-align:center; width:48px"> <pre id='t1c5'></pre></td>
+    <td style="text-align:center; width:48px"> <pre id='t1c4'></pre></td>
+    <td style="text-align:center; width:64px"> <pre id='t1c3'></pre></td>
+    <td style="text-align:center; width:128px"><pre id='t1c2'></pre></td>
+    <td style="text-align:center; width:256px"><pre id='t1c1'></pre></td>
+    <td style="text-align:center; width:512px"><pre id='t1c0'></pre></td>
+  </tr>  
 </table>
 
 <h1>HTJ2K progressive decoding to full resolution (downloaded once, decoded many ways)</h1>
@@ -194,7 +203,7 @@ Note: Below each image, we display the number of decoded bytes and PSNR.
                 display_image(Module, this.response, 'mycanvas', 0, 0);
 
                 for (var i = 5; i >= 0; --i)
-                  setTimeout(display_image, 0, Module, this.response, 'r1c' + i, i, i);
+                  setTimeout(display_image, 0, Module, this.response, 'r1c' + i, i, i, 't1c' + i);
 
                 for (var i = 5; i >= 0; --i)
                   setTimeout(display_image, 0, Module, this.response, 'r2c' + i, i, 0);
