@@ -12,6 +12,7 @@ Decoding the full resolution image.
 <canvas id="mycanvas" width="512" height="512"></canvas>
 <br>
 <pre id="time" style="font-size: 16px">Decode time: </pre>
+<pre id="time" style="font-size: 16px"></pre>
 
 <h1>HTJ2K progressive decoding to the actual image resolution</h1>
 <pre style="font-size:16px">
@@ -46,7 +47,7 @@ Note: Below each image, we display the number of decoded bytes
 This example shows the progressive decoding of JPEG2000. 
 Image quality improves as more data arrives. This is better than waiting for the whole image to arrive before decoding it.
 
-Note: Below each image, we display the number of decoded bytes
+Note: Below each image, we display the number of decoded bytes and PSNR.
 </pre>
 <table>
   <tr>
@@ -103,8 +104,10 @@ Note: Below each image, we display the number of decoded bytes
         pull_j2c_line = Module.cwrap('pull_j2c_line', 'number', ['number']);
         release_j2c_data = Module.cwrap('release_j2c_data', 'void', ['number']);
 
-        function display_image(Module, data, canvas_name, skip_res_for_data, skip_res_for_recon)
+        function display_image(Module, data, canvas_name, skip_res_for_data, skip_res_for_recon, txt_ele_name)
         {
+          var t0 = performance.now();
+        
           j2c = create_j2c_data();
           const array = new Uint8Array(data);
           
@@ -176,7 +179,10 @@ Note: Below each image, we display the number of decoded bytes
           release_j2c_data(j2c);
 
           ctx.putImageData(cimg, 0, 0);
-          Module._free(buffer);        
+          Module._free(buffer);  
+
+          var t1 = performance.now();
+          document.getElementById(txt_ele_name).innerText = (t1 - t0) + " ms";
         }
 
         var request = new XMLHttpRequest;
@@ -185,10 +191,7 @@ Note: Below each image, we display the number of decoded bytes
         request.onload = function (event) {
             if (request.status == 200)
             {
-                var t0 = performance.now();
                 display_image(Module, this.response, 'mycanvas', 0, 0);
-                var t1 = performance.now();
-                document.getElementById('time').innerText = "Decode time: " + (t1 - t0) + " ms";
 
                 for (var i = 5; i >= 0; --i)
                   setTimeout(display_image, 0, Module, this.response, 'r1c' + i, i, i);
