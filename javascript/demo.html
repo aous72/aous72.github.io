@@ -202,11 +202,11 @@ Note: Below each image, we display the number of decoded bytes and PSNR.
             {
                 display_image(Module, this.response, 'mycanvas', 0, 0);
 
-                for (var i = 5; i >= 0; --i)
-                  setTimeout(display_image, 0, Module, this.response, 'r1c' + i, i, i, 't1c' + i);
+                
+                display_image(Module, this.response, 'r1c' + i, i, i, 't1c' + i);
 
-                for (var i = 5; i >= 0; --i)
-                  setTimeout(display_image, 0, Module, this.response, 'r2c' + i, i, 0);
+                
+                 display_image(Module, this.response, 'r2c' + i, i, 0);
             }
         };
         request.send(null);
