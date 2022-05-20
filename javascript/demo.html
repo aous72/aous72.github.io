@@ -239,8 +239,13 @@ Note: Below each image, we display the number of decoded bytes and PSNR.
     txt = document.getElementById('simd_message').innerText.slice(0, -1);
     
     if (simdSupported) {
-      document.getElementById('simd_message').innerText = txt + "SIMD is detected. \n";
-      load_simd_module();
+      if (navigator.userAgent.indexOf("Firefox") !== -1) {
+        document.getElementById('simd_message').innerText = txt + "SIMD is detected. However, you seem to be\nusing Firefox, and I think there is an issue with Firefox, which will hopefully be fixed soon; a bug\nreport has been submitted with the number 1770335. For this reason, the generic (non-simd) version will\nbe loaded. If you want the test the Webassembly SIMD version, please use Chrome or Edge.\n";
+        load_generic_module();
+      } else {
+        document.getElementById('simd_message').innerText = txt + "SIMD is detected. \n";
+        load_simd_module();
+      }
     } else {
       document.getElementById('simd_message').innerText = txt + "SIMD is not detected. \n";
       load_generic_module();
